@@ -1,4 +1,4 @@
-# JS_HW
+# Первая домашка по JS
 <details>
   <summary>Основное задание HW_1 JS</summary>
   
