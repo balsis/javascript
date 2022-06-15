@@ -8,7 +8,7 @@ const checkAge = function(age_1) {
     let age_2 = 18;
     let age_3 = 60;
     
-    if (isNaN(age_1)){
+    if (isNaN(age_1) || !age_1){
     console.log('Warning! Enter a numeric value!');
     }
 else if (age_1 < age_2){
