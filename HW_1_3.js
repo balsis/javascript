@@ -9,9 +9,6 @@ const checkAge = function(age_1) {
     let age_3 = 60;
     
     if (isNaN(age_1)){
-        if (age_1==2 && typeof(age_1)==String){
-            console.log(`You don’t have access because your age is ${age_1}. It’s less then`);
-        }
     console.log('Warning! Enter a numeric value!');
     }
 else if (age_1 < age_2){
