@@ -40,3 +40,5 @@ getWordStructure('Case');
 getWordStructure('Check-list');
 getWordStructure('Check list');
 getWordStructure('Check list');
+
+//   ^^   //
