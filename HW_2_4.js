@@ -20,3 +20,5 @@ palindrome('Abba');
 palindrome('abba');
 palindrome('abBba');
 palindrome('abABba');
+
+//   ^^   //
