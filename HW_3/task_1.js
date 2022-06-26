@@ -82,4 +82,5 @@ const users = [
     },
 ];
 
+console.log(typeof(users))
 console.log(users.filter(newUsers => newUsers.registrationDate == '09.10.2021' || newUsers.registrationDate == '10.10.2021'));
