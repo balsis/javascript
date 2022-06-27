@@ -144,7 +144,7 @@ const addDepartment = function (id, new_enterprise) {
     }
   }
 };
-addDepartment(5, 'Test');
+//addDepartment(5, 'Test');
 
 /*
   5. Написать функцию для редактирования названия предприятия. Принимает в качестве аргумента id предприятия и новое имя предприятия.
@@ -152,7 +152,16 @@ addDepartment(5, 'Test');
   Пример:
   editEnterprise(1, "Новое название предприятия")
   */
+  const editEnterprise = function (id, new_name) {
+    for (index of enterprises) {
+      if (index.id==id){
+      index.name = new_name;
+      return console.log(index);
+      };   
+    };
+    };
   
+  editEnterprise(5, 'Test');  
   /*6. Написать функцию для редактирования названия отдела. Принимает в качестве аргумента id отдела и новое имя отдела.
   
   Пример:
