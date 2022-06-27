@@ -72,7 +72,8 @@ const enterprises = [
   - Отдел аналитики (нет сотрудников)
 */
 
-const countEmployees = function() {enterprises.forEach((enterprise, index) => {  // обход предприятий
+const countEmployees = function() {
+  enterprises.forEach((enterprise, index) => {  // обход предприятий
   let count = 0;                             // задание счетчика сотрудников отдела
   enterprise.departments.forEach((dep, index) => { // обход отделов для счетчика
       count= count+dep.employees_count;
@@ -161,25 +162,35 @@ const addDepartment = function (id, new_enterprise) {
     };
     };
   
-  editEnterprise(5, 'Test');  
+  //editEnterprise(5, 'Test');  
   /*6. Написать функцию для редактирования названия отдела. Принимает в качестве аргумента id отдела и новое имя отдела.
-  
   Пример:
   editDepartment(7, "Новое название отдела")
+  */
   
+  const editDepartment = function (id, new_name) {
+    enterprises.forEach(enterprise => {        
+    enterprise.departments.forEach(dep => {
+      if (dep.id==id) return console.log(`"${dep.name}" переименован в: "${dep.name = new_name}"`);
+    });
+  });
+  };
+  editDepartment(8, 'Отдел охраны');
   
+  /*
   7. Написать функцию для удаления предприятия. В качестве аргумента принимает id предприятия.
-  
   Пример:
   deleteEnterprise(1)
+  */
   
-  
+  /*
   8. Написать функцию для удаления отдела. В качестве аргумента принимает id отдела. Удалить отдел можно только, если в нем нет сотрудников.
   
   Пример:
   deleteDepartment(3)
+  */
   
-  
+  /*
   9. Написать функцию для переноса сотрудников между отделами одного предприятия. В качестве аргумента принимает два значения: id отдела, из которого будут переноситься сотрудники и id отдела, в который будут переноситься сотрудники).
   
   Пример:
