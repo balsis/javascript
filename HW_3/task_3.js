@@ -86,7 +86,7 @@ const countEmployees = function() {enterprises.forEach((enterprise, index) => { 
         else return console.log(` - ${dep.name}: ${dep.employees_count} сотрудников`);  // выводит число сотрудников в каждом отделе
     });
 })}; 
-countEmployees();
+// countEmployees();
 /*
   2. Написать функцию, которая будет принимать 1 аргумент (id отдела или название отдела и возвращать название предприятия, к которому относится).
   
@@ -94,6 +94,14 @@ countEmployees();
   getEnterpriseName(4) // Предприятие 1
   getEnterpriseName("Отдел маркетинга") // Предприятие 2
 */
+const getEnterpriseName = function (id) {
+  enterprises.forEach(enterprise => {
+    enterprise.departments.forEach(dep => {
+      if (dep.id == id) console.log (`Отдел "${dep.name}" c id "${dep.id}" относится к предприятию "${enterprise.name}"`)
+    })
+  });
+};
+// getEnterpriseName(6);
 
 /*
 3. Написать функцию, которая будет добавлять предприятие. В качестве аргумента принимает название предприятия
@@ -101,20 +109,51 @@ countEmployees();
   Пример:
   addEnterprise("Название нового предприятия")
 */
-
+const addEnterprise = function (new_enterprise) {
+  let maxid;
+  enterprises.forEach(enterprise => {    
+    maxid=enterprise.id;
+    enterprise.departments.forEach(dep => {
+      maxid=dep.id;
+    });
+  });
+  enterprises.push({id: maxid+1, name: new_enterprise});
+  console.log(enterprises);
+  //return (console.log(maxid));
+};
+//addEnterprise('Предприятие 4');
 
 /*  4. Написать функцию, которая будет добавлять отдел в предприятие. В качестве аргумента принимает id предприятия, в которое будет добавлен отдел и название отдела.
   
   Пример:
   addDepartment(1, "Название нового отдела")
-  
+*/
+
+const addDepartment = function (id, new_enterprise) {
+  let maxid;
+  enterprises.forEach(enterprise => {    
+    maxid=enterprise.id;
+    enterprise.departments.forEach(dep => {
+      maxid=dep.id;
+    });
+  });
+  for (index of enterprises) {
+    if (index.id==id){
+    index.departments.push({id: maxid+1, name: new_enterprise});
+  console.log(index);
+    }
+  }
+};
+addDepartment(5, 'Test');
+
+/*
   5. Написать функцию для редактирования названия предприятия. Принимает в качестве аргумента id предприятия и новое имя предприятия.
   
   Пример:
   editEnterprise(1, "Новое название предприятия")
+  */
   
-  
-  6. Написать функцию для редактирования названия отдела. Принимает в качестве аргумента id отдела и новое имя отдела.
+  /*6. Написать функцию для редактирования названия отдела. Принимает в качестве аргумента id отдела и новое имя отдела.
   
   Пример:
   editDepartment(7, "Новое название отдела")
@@ -136,5 +175,4 @@ countEmployees();
   
   Пример:
   moveEmployees(2, 3)
-*/  
-  
+*/
