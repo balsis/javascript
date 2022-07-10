@@ -88,3 +88,7 @@ e.g. function getWordStructure(word)
 e.g. function isPalindrom(word)
 Проверки: 'abba', 'Abba'
   </details>  
+
+<details>
+  <summary>Задания со звездочками HW_3 JS</summary>  
+</details> 
