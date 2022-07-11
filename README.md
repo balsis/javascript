@@ -167,6 +167,7 @@ deleteDepartment(3)
 ```
 Пример:
 moveEmployees(2, 3)
-  </details> 
-</details> 
 ```
+</details> 
+</details> 
+
