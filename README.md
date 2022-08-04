@@ -37,6 +37,7 @@
  33. Иначе выводите “Technical work”.
   
 </details>
+
 <details>
   <summary>Задания со звездочками HW_1 JS</summary>  
 
