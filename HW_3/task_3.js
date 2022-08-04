@@ -182,17 +182,49 @@ const addDepartment = function (id, new_enterprise) {
   Пример:
   deleteEnterprise(1)
   */
-  
+   const deleteEnterprise = (id) => { 
+  enterprises.forEach((enterprise, index) =>{
+     if(enterprise.id===id){
+      console.log(enterprises[index]);
+      enterprises.splice(index, 1);
+     }
+   })  
+ }
   /*
   8. Написать функцию для удаления отдела. В качестве аргумента принимает id отдела. Удалить отдел можно только, если в нем нет сотрудников.
   
   Пример:
   deleteDepartment(3)
   */
-  
+   const deleteDepartment = (id) => { 
+  enterprises.forEach(enterprise =>{
+    enterprise.departments.forEach((department, index) =>{
+     if(department.id===id && department.employees_count===0){
+      console.log("Удален отдел №  " + department.id);
+      enterprise.departments.splice(index, 1);
+     } 
+    })
+  })  
+ }
   /*
   9. Написать функцию для переноса сотрудников между отделами одного предприятия. В качестве аргумента принимает два значения: id отдела, из которого будут переноситься сотрудники и id отдела, в который будут переноситься сотрудники).
-  
-  Пример:
-  moveEmployees(2, 3)
-*/
+ */
+ const moveEmployees = (id1, id2) => { 
+   let count = 0;
+  enterprises.forEach(enterprise =>{
+    enterprise.departments.forEach(department =>{
+     if(department.id==id1){
+      count = department.employees_count;
+      console.log(count);
+     } 
+    })
+    enterprise.departments.forEach(department =>{
+      if(department.id==id2){
+       department.employees_count+= count;
+       console.log(department.employees_count);
+      } 
+     })
+  })  
+ }
+
+ moveEmployees(2,3);  
